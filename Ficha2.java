@@ -18,43 +18,43 @@ public class Ficha2 extends JFrame implements WindowListener{
     private JButton subSTR=new JButton("-");
     private JTextField textSTR=new JTextField();
     private JLabel labelSTR=new JLabel("Fuerza: ");
-    private JPanel panelSTR=new JPanel(new BorderLayout(1,4));
+    private JPanel panelSTR=new JPanel(new GridLayout(1,4));
     
     //inteligencia
     private JButton addINT=new JButton("+");
     private JButton subINT=new JButton("-");
     private JTextField textINT=new JTextField();
     private JLabel labelINT=new JLabel("Inteligencia: ");
-    private JPanel panelINT=new JPanel(new BorderLayout(1,4));
+    private JPanel panelINT=new JPanel(new GridLayout(1,4));
     
     //destreza
     private JButton addDEX=new JButton("+");
     private JButton subDEX=new JButton("-");
     private JTextField textDEX=new JTextField();
     private JLabel labelDEX=new JLabel("Destreza: ");
-    private JPanel panelDEX=new JPanel(new BorderLayout(1,4));
+    private JPanel panelDEX=new JPanel(new GridLayout(1,4));
     
     //percepcion
     private JButton addPER=new JButton("+");
     private JButton subPER=new JButton("-");
     private JTextField textPER=new JTextField();
     private JLabel labelPER=new JLabel("Percepcion: ");
-    private JPanel panelPER=new JPanel(new BorderLayout(1,4));
+    private JPanel panelPER=new JPanel(new GridLayout(1,4));
     
     //resistencia
     private JButton addRES=new JButton("+");
     private JButton subRES=new JButton("-");
     private JTextField textRES=new JTextField();
     private JLabel labelRES=new JLabel("Resistencia: ");
-    private JPanel panelRES=new JPanel(new BorderLayout(1,4));
+    private JPanel panelRES=new JPanel(new GridLayout(1,4));
     
     //labels de apartados
     private JLabel Atrib=new JLabel("Atributos: ");
     private JLabel Habi=new JLabel("Habilidades: ");
     private JLabel Dote=new JLabel("Dotes: ");
     private JLabel Equi=new JLabel("Equipo: ");
-    private JLabel Crear1=new JLabel("Created By: ");
-    private JLabel Crear2=new JLabel("Linksamaru");
+    private JLabel Crear1=new JLabel("                           Created By: ");
+    private JLabel Crear2=new JLabel("                           Linksamaru");
     
     //botones de apartados
     private JButton Hab=new JButton("Añadir Habilidades");
@@ -63,19 +63,17 @@ public class Ficha2 extends JFrame implements WindowListener{
     private JButton Fic=new JButton("Visualizar Ficha");
     
     //paneles de apartados
-    private JPanel Atributos=new JPanel(new BorderLayout(2,1));
+    private JPanel Atributos=new JPanel(new GridLayout(6,1));
     private JPanel Visual=new JPanel();
-    private JPanel Habilidades=new JPanel(new BorderLayout(2,1));
-    private JPanel Dotes=new JPanel(new BorderLayout(2,1));
-    private JPanel Equipo=new JPanel(new BorderLayout(2,1));
-    private JPanel Creador=new JPanel(new BorderLayout(2,1));
+    private JPanel Habilidades=new JPanel(new GridLayout(2,1));
+    private JPanel Dotes=new JPanel(new GridLayout(2,1));
+    private JPanel Equipo=new JPanel(new GridLayout(2,1));
+    private JPanel Creador=new JPanel(new GridLayout(2,1));
     
     //paneles de ordenacion
-    private JPanel AtriVisua=new JPanel(new BorderLayout(2,1));
-    private JPanel AtriVisuaCrea=new JPanel(new BorderLayout(2,1));
-    private JPanel HabiDot=new JPanel(new BorderLayout(2,1));
-    private JPanel HabiDotEqu=new JPanel(new BorderLayout(2,1));
-    private JPanel General=new JPanel(new GridLayout(3,2));
+    private JPanel General11=new JPanel(new GridLayout(3,1));
+    private JPanel General12=new JPanel(new GridLayout(3,1));
+    private JPanel General1=new JPanel(new GridLayout(1,2));
     
     public Ficha2(){
         //panel atributo fuerza
@@ -134,14 +132,21 @@ public class Ficha2 extends JFrame implements WindowListener{
         * al monstruo del espaguetti volador 
         * para q funcione
         */
-        this.General.add(Atributos);
-        this.General.add(Visual);
-        this.General.add(Creador);
-        this.General.add(Habilidades);
-        this.General.add(Dotes);
-        this.General.add(Equipo);
-        this.add(General);
-        this.setBounds(200, 200, 500, 600);
+        this.addDEX.setSize(3, 3);
+        this.labelSTR.setSize(2, 8);
+        this.General11.add(Atributos);
+        this.General12.add(Habilidades);
+        this.General11.add(Visual);
+        this.General12.add(Dotes);
+        this.General11.add(Creador);
+        this.General12.add(Equipo);
+        
+        this.General1.add(General11);
+        this.General1.add(General12);
+        this.add(General1);
+        
+        this.setBounds(200, 100, 550, 500);
+        this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(true);
     }
