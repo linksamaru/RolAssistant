@@ -69,7 +69,19 @@ public class RolAssistant extends JFrame implements WindowListener{
                     Logo.setIcon(logoDyD);
                 }
             }
-        }); 
+        });
+        //boton Aceptar
+        Aceptar.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                if(0==Reglamento.getSelectedIndex())
+                    Ficha2 v=new Ficha2();
+                    //con VentanaHabilidades y Ficha si funciona pero con el 
+                    //menu principal RolAssistant no
+                else{
+                    //aun no implementado
+                }
+            }
+        });
     }
     public void windowOpened(WindowEvent e) {}
     public void windowClosing(WindowEvent e) {
@@ -83,7 +95,6 @@ public class RolAssistant extends JFrame implements WindowListener{
     
     public static void main(String[] args) {
        //RolAssistant f=new RolAssistant();
-        Ficha v=new Ficha();//con VentanaHabilidades y Ficha si funciona pero con el 
-        //menu principal RolAssistant no
+        RolAssistant r=new RolAssistant();
     }
 }
